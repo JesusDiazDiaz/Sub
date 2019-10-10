@@ -1,0 +1,9 @@
+{
+    "auth": {
+        "subb09328c0": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    }
+}

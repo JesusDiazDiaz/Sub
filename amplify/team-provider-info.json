@@ -1,0 +1,19 @@
+{
+    "subenv": {
+        "awscloudformation": {
+            "AuthRoleName": "sub-subenv-20190907184339-authRole",
+            "UnauthRoleArn": "arn:aws:iam::044162189377:role/sub-subenv-20190907184339-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::044162189377:role/sub-subenv-20190907184339-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "sub-subenv-20190907184339-deployment",
+            "UnauthRoleName": "sub-subenv-20190907184339-unauthRole",
+            "StackName": "sub-subenv-20190907184339",
+            "StackId": "arn:aws:cloudformation:us-east-1:044162189377:stack/sub-subenv-20190907184339/51f47e00-d1c9-11e9-8231-0a129e2750f4"
+        },
+        "categories": {
+            "auth": {
+                "subb09328c0": {}
+            }
+        }
+    }
+}
