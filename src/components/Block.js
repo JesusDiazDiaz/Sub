@@ -117,6 +117,7 @@ export default class Block extends Component {
       wrap,
       style,
       children,
+      relative,
       ...props
     } = this.props;
 
@@ -132,6 +133,7 @@ export default class Block extends Component {
       right && styles.right,
       top && styles.top,
       bottom && styles.bottom,
+      relative && styles.relative,
       margin && {...this.handleMargins()},
       padding && {...this.handlePaddings()},
       card && styles.card,
@@ -194,9 +196,10 @@ export const styles = StyleSheet.create({
     shadowColor: theme.colors.black,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
-    shadowRadius: 13,
+    shadowRadius: 12,
     elevation: 2,
   },
+  relative: {position: 'relative'},
   accent: {backgroundColor: theme.colors.accent},
   primary: {backgroundColor: theme.colors.primary},
   secondary: {backgroundColor: theme.colors.secondary},

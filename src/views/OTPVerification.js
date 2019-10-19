@@ -5,28 +5,37 @@ import {Auth} from 'aws-amplify';
 import {Text, Button, Block} from '../components';
 import theme from '../modules/theme';
 import BaseKeyboardAvoidingView from '../components/BaseKeyboardAvoidingView';
-import {pushTabBasedApp} from '../navigation';
+import {pushTabBasedApp, pushNewPasswordScreen} from '../navigation';
 
-const OTPVerification = ({componentId, username}) => {
+const OTPVerification = ({componentId, username, isForgotPassword}) => {
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
 
-  console.log(username);
+  const handleVerification = () => {
+    if (isForgotPassword) {
+      forgotPassword();
+    } else {
+      confirmSignUp();
+    }
+  };
 
-  const handleVerification = async () => {
+  const confirmSignUp = async () => {
     try {
       setLoading(true);
-      const data = await Auth.confirmSignUp(username, code, {
+      await Auth.confirmSignUp(username, code, {
         // Optional. Force user confirmation irrespective of existing alias. By default set to True.
         forceAliasCreation: true,
       });
-      console.log(data);
       pushTabBasedApp();
     } catch (e) {
       console.log(e);
     } finally {
       setLoading(false);
     }
+  };
+
+  const forgotPassword = async ({username, code}) => {
+    pushNewPasswordScreen(componentId, {passProps: {username, code}});
   };
 
   return (

@@ -12,6 +12,7 @@ import {
   ADD_PRODUCT_SCREEN,
   ACCOUNT_SCREEN,
   OTP_VERIFICATION,
+  NEW_PASSWORD,
 } from './Screens';
 import {Auth} from 'aws-amplify';
 import registerScreens from './registerScreen';
@@ -49,7 +50,7 @@ export async function startApp() {
     },
     bottomTabs: {
       backgroundColor: 'white',
-      drawBehind: true,
+      // drawBehind: true,
       hideShadow: true,
     },
     bottomTab: {
@@ -237,10 +238,19 @@ export function pushOTPVerification(componentId, username) {
   });
 }
 
-export function pushForgotPasswordsScreenApp(componentId) {
+export function pushForgotPasswordsScreen(componentId) {
   Navigation.push(componentId, {
     component: {
       name: FORGOT_PASSWORD_SCREEN,
+    },
+  });
+}
+
+export function pushNewPasswordScreen(componentId, {passProps = {}}) {
+  Navigation.push(componentId, {
+    component: {
+      name: NEW_PASSWORD,
+      passProps,
     },
   });
 }

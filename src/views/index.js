@@ -7,3 +7,4 @@ export {default as NotificationsScreen} from './NotificationsScreen';
 export {default as AccountScreen} from './AccountScreen';
 export {default as AddProductScreen} from './AddProductScreen';
 export {default as OTPVerification} from './OTPVerification';
+export {default as NewPasswordScreen} from './NewPasswordScreen';

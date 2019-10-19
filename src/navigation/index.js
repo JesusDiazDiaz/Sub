@@ -3,8 +3,9 @@ export {
   pushLoginScreen,
   popCurrentScreen,
   pushSignUpScreenApp,
-  pushForgotPasswordsScreenApp,
+  pushForgotPasswordsScreen,
   pushTabBasedApp,
+  pushNewPasswordScreen,
   pushOTPVerification,
   startApp,
 } from './Navigation';

@@ -11,3 +11,4 @@ export const ADD_PRODUCT_SCREEN = 'sub.AddProductScreen';
 export const ACCOUNT_SCREEN = 'sub.AccountScreen';
 
 export const OTP_VERIFICATION = 'sub.OTPVerification';
+export const NEW_PASSWORD = 'sub.NewPassword';

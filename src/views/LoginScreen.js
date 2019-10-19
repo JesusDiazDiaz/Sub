@@ -17,8 +17,8 @@ import {
 import ErrorMessage from '../components/ErrorMessage';
 
 let schema = yup.object().shape({
-  username: yup.string().required(),
-  password: yup.string().required(),
+  username: yup.string().required('Celular es requerido.'),
+  password: yup.string().required('Contraseña es requerido.'),
 });
 
 const LoginScreen = ({componentId}) => {
@@ -27,8 +27,7 @@ const LoginScreen = ({componentId}) => {
   const handleLogin = async ({username, password}) => {
     try {
       setLoading(true);
-      const user = await Auth.signIn(username, password);
-      console.log({user});
+      await Auth.signIn(username, password);
       pushTabBasedApp();
     } catch (err) {
       if (err.code === 'UserNotFoundException') {

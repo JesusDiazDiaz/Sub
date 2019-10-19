@@ -90,7 +90,7 @@ export default class Input extends Component {
       secure,
       error,
       style,
-      disableUnderline,
+      disableUnderline = false,
       iconLeft,
       placeholder,
       ...props
@@ -116,7 +116,7 @@ export default class Input extends Component {
 
     return (
       <React.Fragment>
-        <Block center flex={false} row margin={[theme.sizes.base / 2, 0]}>
+        <Block margin={[theme.sizes.base / 2, 0]}>
           {this.renderLabel()}
           {this.renderIconLeft()}
           <TextInput
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     fontSize: theme.sizes.font,
     fontWeight: '500',
     color: theme.colors.black,
-    height: theme.sizes.base * 2,
+    height: theme.sizes.base * 1.8,
   },
   inputUnderline: {
     borderWidth: 0,
