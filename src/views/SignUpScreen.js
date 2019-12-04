@@ -14,17 +14,17 @@ import {
 import ErrorMessage from '../components/ErrorMessage';
 
 let schema = yup.object().shape({
-  name: yup.string().required(),
-  phoneNumber: yup.string().required(),
+  name: yup.string().required('Nombre es requerido'),
+  phoneNumber: yup.string().required('Telefono es requerido'),
   email: yup
     .string()
-    .email()
-    .required(),
-  password: yup.string().required(),
+    .email('Email debe ser valido')
+    .required('Email es requerido'),
+  password: yup.string().required('Contraseña es requerido'),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref('password'), null], 'Passwords must match')
-    .required(),
+    .oneOf([yup.ref('password'), null], 'No son iguales las contraseñas')
+    .required('Contraseña es requerido'),
 });
 
 const SignUpScreen = ({componentId}) => {
@@ -63,7 +63,6 @@ const SignUpScreen = ({componentId}) => {
               password: '',
               confirmPassword: '',
             }}
-            va
             onSubmit={handleSignUp}>
             {({handleChange, handleBlur, values, handleSubmit}) => (
               <React.Fragment>
@@ -81,7 +80,7 @@ const SignUpScreen = ({componentId}) => {
                     onBlur={handleBlur('phoneNumber')}
                     value={values.phoneNumber}
                   />
-                  <ErrorMessage name="name" />
+                  <ErrorMessage name="phoneNumber" />
                   <Input
                     email
                     label="Email"
@@ -99,7 +98,7 @@ const SignUpScreen = ({componentId}) => {
                   />
                   <ErrorMessage name="password" />
                   <Input
-                    label="Confirmar Contraseña"
+                    label="Confirmar contraseña"
                     onChangeText={handleChange('confirmPassword')}
                     onBlur={handleBlur('confirmPassword')}
                     value={values.confirmPassword}

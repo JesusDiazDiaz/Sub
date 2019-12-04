@@ -93,6 +93,7 @@ export default class Input extends Component {
       disableUnderline = false,
       iconLeft,
       placeholder,
+      row,
       ...props
     } = this.props;
 
@@ -116,7 +117,7 @@ export default class Input extends Component {
 
     return (
       <React.Fragment>
-        <Block margin={[theme.sizes.base / 2, 0]}>
+        <Block row={row} margin={[theme.sizes.base / 2, 0]}>
           {this.renderLabel()}
           {this.renderIconLeft()}
           <TextInput
@@ -128,6 +129,7 @@ export default class Input extends Component {
             placeholder={placeholder}
             keyboardType={inputType}
             placeholderTextColor={theme.colors.black}
+            row={row}
             {...props}
           />
           {this.renderToggle()}
@@ -143,6 +145,7 @@ const styles = StyleSheet.create({
     borderRadius: theme.sizes.radius,
     fontSize: theme.sizes.font,
     fontWeight: '500',
+    width: '100%',
     color: theme.colors.black,
     height: theme.sizes.base * 1.8,
   },

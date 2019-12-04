@@ -1,0 +1,20 @@
+{
+    "permissions": {
+        "auth": {
+            "subb09328c0": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        },
+        "storage": {
+            "dynamo76680313": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

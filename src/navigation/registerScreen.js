@@ -14,6 +14,8 @@ import {
   AccountScreen,
   OTPVerification,
   NewPasswordScreen,
+  ProductScreen,
+  SettingsScreen,
 } from '../views';
 import {Provider} from 'react-redux';
 
@@ -28,6 +30,8 @@ import {
   ACCOUNT_SCREEN,
   OTP_VERIFICATION,
   NEW_PASSWORD,
+  PRODUCT_SCREEN,
+  SETTINGS_SCREEN,
 } from './Screens';
 
 import {configureStore} from '../config';
@@ -44,6 +48,8 @@ export default function() {
   Navigation.registerComponent(ACCOUNT_SCREEN, () => AccountScreen);
   Navigation.registerComponent(OTP_VERIFICATION, () => OTPVerification);
   Navigation.registerComponent(NEW_PASSWORD, () => NewPasswordScreen);
+  Navigation.registerComponent(PRODUCT_SCREEN, () => ProductScreen);
+  Navigation.registerComponent(SETTINGS_SCREEN, () => SettingsScreen);
   Navigation.registerComponent(
     FORGOT_PASSWORD_SCREEN,
     () => ForgotPasswordScreen,

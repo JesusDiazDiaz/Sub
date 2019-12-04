@@ -8,3 +8,5 @@ export {default as AccountScreen} from './AccountScreen';
 export {default as AddProductScreen} from './AddProductScreen';
 export {default as OTPVerification} from './OTPVerification';
 export {default as NewPasswordScreen} from './NewPasswordScreen';
+export {default as ProductScreen} from './ProductScreen';
+export {default as SettingsScreen} from './SettingsScreen';

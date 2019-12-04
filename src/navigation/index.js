@@ -4,6 +4,7 @@ export {
   popCurrentScreen,
   pushSignUpScreenApp,
   pushForgotPasswordsScreen,
+  pushProductScreen,
   pushTabBasedApp,
   pushNewPasswordScreen,
   pushOTPVerification,

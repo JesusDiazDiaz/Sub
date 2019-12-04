@@ -9,6 +9,7 @@
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
   },
   "dependencies": {
+    "@react-native-community/slider": "^2.0.5",
     "@twotalltotems/react-native-otp-input": "^1.1.0",
     "amazon-cognito-identity-js": "^3.0.15",
     "aws-amplify": "^1.1.38",
@@ -20,6 +21,7 @@
     "react-native": "0.60.5",
     "react-native-keyboard-aware-scroll-view": "^0.9.1",
     "react-native-navigation": "^3.2.0",
+    "react-native-vector-icons": "^6.6.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",

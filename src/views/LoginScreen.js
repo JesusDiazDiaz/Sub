@@ -1,7 +1,14 @@
 // @flow
 
 import React, {useState} from 'react';
-import {View, StyleSheet, SafeAreaView, Image, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  Alert,
+} from 'react-native';
 import {Auth} from 'aws-amplify';
 import * as yup from 'yup';
 import {Formik} from 'formik';
@@ -10,7 +17,7 @@ import BaseKeyboardAvoidingView from '../components/BaseKeyboardAvoidingView';
 import theme from '../modules/theme';
 import {
   pushSignUpScreenApp,
-  pushForgotPasswordsScreenApp,
+  pushForgotPasswordsScreen,
   pushTabBasedApp,
   pushOTPVerification,
 } from '../navigation';
@@ -32,6 +39,7 @@ const LoginScreen = ({componentId}) => {
     } catch (err) {
       if (err.code === 'UserNotFoundException') {
         console.log('no existe');
+        Alert.alert('No existe el usuario.');
       }
     } finally {
       setLoading(false);
@@ -92,7 +100,7 @@ const LoginScreen = ({componentId}) => {
               </React.Fragment>
             )}
           </Formik>
-          <Button onPress={() => pushForgotPasswordsScreenApp(componentId)}>
+          <Button onPress={() => pushForgotPasswordsScreen(componentId)}>
             <Text center semibold h3 gray>
               Olvidaste tu contraseña ?
             </Text>

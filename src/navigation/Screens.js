@@ -8,6 +8,8 @@ export const HOME_SCREEN = 'sub.HomeScreen';
 export const MY_PRODUCTS_SCREEN = 'sub.MyProductsScreen';
 export const NOTIFICATIONS_SCREEN = 'sub.NotificationsScreen';
 export const ADD_PRODUCT_SCREEN = 'sub.AddProductScreen';
+export const PRODUCT_SCREEN = 'sub.ProductScreen';
+export const SETTINGS_SCREEN = 'sub.SettingsScreen';
 export const ACCOUNT_SCREEN = 'sub.AccountScreen';
 
 export const OTP_VERIFICATION = 'sub.OTPVerification';

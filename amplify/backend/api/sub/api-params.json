@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/products",
+            "lambdaFunction": "theSubFunction",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "sub",
+    "apiName": "sub",
+    "functionArns": [
+        {
+            "lambdaFunction": "theSubFunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "sub-subenv-20190907184339-authRole",
+        "unAuthRoleName": "sub-subenv-20190907184339-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "theSubFunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "6dd93d59"
+}

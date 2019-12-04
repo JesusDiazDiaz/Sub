@@ -13,6 +13,8 @@ import {
   ACCOUNT_SCREEN,
   OTP_VERIFICATION,
   NEW_PASSWORD,
+  PRODUCT_SCREEN,
+  SETTINGS_SCREEN,
 } from './Screens';
 import {Auth} from 'aws-amplify';
 import registerScreens from './registerScreen';
@@ -43,7 +45,7 @@ export async function startApp() {
       drawBehind: true,
     },
     statusBar: {
-      style: 'dark',
+      style: 'light',
     },
     layout: {
       orientation: ['portrait'],
@@ -191,7 +193,7 @@ export function pushTabBasedApp() {
               children: [
                 {
                   component: {
-                    name: ACCOUNT_SCREEN,
+                    name: SETTINGS_SCREEN,
                     options: {
                       topBar: {
                         visible: false,
@@ -250,6 +252,24 @@ export function pushNewPasswordScreen(componentId, {passProps = {}}) {
   Navigation.push(componentId, {
     component: {
       name: NEW_PASSWORD,
+      passProps,
+    },
+  });
+}
+
+export function pushProductScreen(componentId, passProps = {}) {
+  Navigation.push(componentId, {
+    component: {
+      name: PRODUCT_SCREEN,
+      passProps,
+    },
+  });
+}
+
+export function pushSettingsScreen(componentId, passProps = {}) {
+  Navigation.push(componentId, {
+    component: {
+      name: SETTINGS_SCREEN,
       passProps,
     },
   });
